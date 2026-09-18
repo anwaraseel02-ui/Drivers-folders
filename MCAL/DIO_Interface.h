@@ -37,4 +37,4 @@ void DIO_voidTogPinValue      (u8 u8PORT, u8 u8PIN                 );
 void DIO_voidSetPortDirection (u8 u8PORT, u8 u8Direction           );
 void DIO_voidSetPortValue     (u8 u8PORT, u8 u8Value               );
 u8 DIO_u8GetPortValue         (u8 u8PORT                           );
-void DIO_voidTogPortValue     (u8 u8PORT, u8 u8PIN                 ); 
+void DIO_voidTogPortValue     (u8 u8PORT                           ); 
