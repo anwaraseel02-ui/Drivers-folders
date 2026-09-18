@@ -4,7 +4,7 @@ Layer : MCAL
 SWC   : DIO/GPIO
 */
 
-#include "STD_TYPES.h"
+#include "STD_Types.h"
 #include "BIT_MATH.h"
 
 #include "DIO_Private.h"
@@ -25,8 +25,8 @@ void DIO_voidSetPinDirection (u8 u8PORT, u8 u8PIN, u8 u8Direction)
             case DIO_PORTD : SET_BIT(DDRD, u8PIN); break ;
         }
     }
-    elseif (u8Direction == DIO_PIN_INPUT)
-    {
+    else if (u8Direction == DIO_PIN_INPUT)
+     {
          switch (u8PORT)
         {
             case DIO_PORTA : CLR_BIT(DDRA, u8PIN); break ;
@@ -34,7 +34,7 @@ void DIO_voidSetPinDirection (u8 u8PORT, u8 u8PIN, u8 u8Direction)
             case DIO_PORTC : CLR_BIT(DDRC, u8PIN); break ; 
             case DIO_PORTD : CLR_BIT(DDRD, u8PIN); break ;
         }   
-    }
+     }
 }
 
 
@@ -50,7 +50,7 @@ void DIO_voidSetPinValue (u8 u8PORT, u8 u8PIN, u8 u8Value)
             case DIO_PORTD : SET_BIT(PORTD, u8PIN); break ;
         }
     }
-    elseif (u8Value == DIO_PIN_LOW)
+    else if (u8Value == DIO_PIN_LOW)
     {
          switch (u8PORT)
         {
@@ -80,10 +80,10 @@ void DIO_voidTogPinValue (u8 u8PORT, u8 u8PIN)
 { 
     switch (u8PORT)
     {
-        case DIO_PORTA : TOG_BIT(PINA, u8PIN); break;
-        case DIO_PORTB : TOG_BIT(PINB, u8PIN); break;
-        case DIO_PORTC : TOG_BIT(PINC, u8PIN); break;
-        case DIO_PORTD : TOG_BIT(PIND, u8PIN); break;
+        case DIO_PORTA : TOG_BIT(PORTA, u8PIN); break;
+        case DIO_PORTB : TOG_BIT(PORTB, u8PIN); break;
+        case DIO_PORTC : TOG_BIT(PORTC, u8PIN); break;
+        case DIO_PORTD : TOG_BIT(PORTD, u8PIN); break;
     }
 }
  
@@ -118,10 +118,10 @@ u8 DIO_u8GetPortValue (u8 u8PORT )
  u8 LOCAL_u8GetPort = 0;
     switch (u8PORT)
     {
-        case DIO_PORTA : LOCAL_u8GetPort = PINA break;
-        case DIO_PORTB : LOCAL_u8GetPort = PINB break;
-        case DIO_PORTC : LOCAL_u8GetPort = PINC break;
-        case DIO_PORTD : LOCAL_u8GetPort = PIND break;
+        case DIO_PORTA : LOCAL_u8GetPort = PINA; break;
+        case DIO_PORTB : LOCAL_u8GetPort = PINB; break;
+        case DIO_PORTC : LOCAL_u8GetPort = PINC; break;
+        case DIO_PORTD : LOCAL_u8GetPort = PIND; break;
     }
 return LOCAL_u8GetPort ;
 }
@@ -130,9 +130,9 @@ void DIO_voidTogPortValue     (u8 u8PORT )
 {
   switch (u8PORT)
     {
-        case DIO_PORTA : PORTA = ~PORTA break;
-        case DIO_PORTB : PORTB = ~PORTB break;
-        case DIO_PORTC : PORTC = ~PORTC break;
-        case DIO_PORTD : PORTD = ~PORTD break;
+        case DIO_PORTA : PORTA = ~PORTA; break;
+        case DIO_PORTB : PORTB = ~PORTB; break;
+        case DIO_PORTC : PORTC = ~PORTC; break;
+        case DIO_PORTD : PORTD = ~PORTD; break;
     }
 }
